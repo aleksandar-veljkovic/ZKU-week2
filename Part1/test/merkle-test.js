@@ -56,6 +56,9 @@ describe("MerkleTree", function () {
             "path_elements": ["2", node9, node13],
             "path_index": ["0", "0", "0"]
         }
+
+        console.log(node9, node13);
+
         const { proof, publicSignals } = await groth16.fullProve(Input, "circuits/circuit_js/circuit.wasm","circuits/circuit_final.zkey");
 
         const editedPublicSignals = unstringifyBigInts(publicSignals);
@@ -77,6 +80,7 @@ describe("MerkleTree", function () {
             "path_elements": ["1", node9, node13],
             "path_index": ["1", "0", "0"]
         }
+
         const { proof: proofLeaf2, publicSignals: publicSignalsLeaf2 } = await groth16.fullProve(InputLeaf2, "circuits/circuit_js/circuit.wasm","circuits/circuit_final.zkey");
 
         const editedLeaf2PublicSignals = unstringifyBigInts(publicSignalsLeaf2);

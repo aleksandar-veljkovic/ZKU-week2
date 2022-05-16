@@ -24,6 +24,7 @@ contract MerkleTree is Verifier {
 
     function insertLeaf(uint256 hashedLeaf) public returns (uint256) {
         // [assignment] insert a hashed leaf into the Merkle tree
+        require(index < 7, "Tree is full");
         hashes[index] = hashedLeaf;
 
         uint256 hashValue;
